@@ -1,19 +1,26 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component Vuejs</div>
-                </div>
-            </div>
-        </div>
+    <div>
+        <h1>Chat</h1>
+        <ul>
+            <li v-for="message in messages" :key="message.id">{{ message }}</li>
+        </ul>
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+import echo from '../echo.js';
+
+export default {
+    data() {
+        return {
+            messages: [],
+        };
+    },
+    mounted() {
+        echo.channel('chat')
+            .listen('MessageSent', (event) => {
+                this.messages.push(event.message);
+            });
+    },
+};
 </script>
