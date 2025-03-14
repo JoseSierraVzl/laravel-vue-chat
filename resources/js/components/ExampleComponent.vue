@@ -1,26 +1,23 @@
 <template>
-    <div>
-        <h1>Chat</h1>
-        <ul>
-            <li v-for="message in messages" :key="message.id">{{ message }}</li>
-        </ul>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Example Component</div>
+
+                    <div class="card-body">
+                        I'm an example component.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-import echo from '../echo.js';
-
-export default {
-    data() {
-        return {
-            messages: [],
-        };
-    },
-    mounted() {
-        echo.channel('chat')
-            .listen('MessageSent', (event) => {
-                this.messages.push(event.message);
-            });
-    },
-};
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        }
+    }
 </script>

@@ -12,17 +12,13 @@
         "axios": "^1.7.4",
         "bootstrap": "^5.2.3",
         "concurrently": "^9.0.1",
+        "laravel-echo": "^2.0.2",
         "laravel-vite-plugin": "^1.2.0",
+        "pusher-js": "^8.4.0",
         "sass": "^1.56.1",
         "tailwindcss": "^4.0.0",
-        "vite": "^6.0.11",
+        "vite": "^5.0.0",
         "vue": "^3.2.37"
     },
-    "packageManager": "yarn@1.22.22",
-    "dependencies": {
-        "laravel-echo": "^2.0.2",
-        "laravel-echo-server": "^1.6.3",
-        "pusher-js": "^8.4.0",
-        "socket.io-client": "^4.8.1"
-    }
+    "packageManager": "yarn@3.8.6+sha512.a1c3a781c248a6d957eacd53f9b965663af89ef777982d7d9086af6de00cab8724cb75bade6b0cdfcaa04f63e20767fc435aade5489be976a5745d6ee03c7932"
 }

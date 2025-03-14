@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use App\Events\MessageSent;
-
 
 class HomeController extends Controller
 {
@@ -28,12 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function sendMessage(Request $request)
-    {
-        $message = $request->message;
-        broadcast(new MessageSent($message))->toOthers();
-        return response()->json(['status' => 'Message Sent!']);
-    }
-
 }
